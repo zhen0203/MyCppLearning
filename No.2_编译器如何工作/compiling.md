@@ -1,0 +1,27 @@
+## compiling编译器如何工作
+每个cpp文件被编译为obj文件，这些cpp文件也被称为translation unity(编译单元)
+文件只是给编译器提供源码的方式
+
+编译的第一步检查所有preprocessing语句并评估，常见的有include，define，if，ifdef
+
+### #include如何工作
+preprocessor打开该文件将其中内容复制粘贴到当前文件中，只是简单的复制
+
+### #define
+```
+#define INTEGER int
+```
+将文件中的INTEGER替换为int
+
+### if
+if预处理语句根据特定条件包含或剔除代码
+```
+#if 0
+int Multiply（int a，int b）
+{
+    int result = a*b；
+    return result；
+}
+#endif
+```
+#if 0将代码变为禁用状态
