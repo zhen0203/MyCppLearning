@@ -13,10 +13,38 @@ int main()
 	std::cin.get();
 }
 ```
-
 进行调试，输出显示1>hello world.vcxproj -> H:\c++LearningByZhen\hello world\x64\Debug\hello world.exe
 已在该位置下生成Hello World.exe程序。
 
+```
+//使用自定义函数替换cout
+#include <iostream>
+
+void Log(const char* message)
+{
+	std::cout << message << std::endl;
+}
+
+int main()
+{
+	Log("Hello World!");
+	std::cin.get();
+}
+
+```
+在源文件中创建Log.cpp将Log函数剪切到Log.cpp中，将main和Log文件连接需要 void Log(const char* message)；函数的声明。
+
+### 代码解释
+#include <iostream>预处理指令（preprocessor statement）--发生在编译之前
+include的文件一般位于头文件中
+int main（）--程序执行的入口
+cin.get --等待输入回车
+
+### 代码执行过程
+首先将预处理文件添加进我们的文件然后编译器将代码解释为二进制文件
+.cpp文件会被编译，头文件不会 -> cpp文件一个一个单独编译成为object文件(.obj) -> 连接器（linker）将各个.obj文件连接起来成为.exe
+
+两个文件Log和main编译整个项目linker会自动寻找log的定义编译整个项目，单独执行main文件则会报错
 
 ### 第一次尝试使用git
 
