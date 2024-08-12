@@ -6,7 +6,7 @@
 - step into, 进入当前行的函数
 - step over, 转到当前行的下一行
 - step out, 跳出当前函数
-
+- go to Disassembly 查看汇编代码ctrl+G
 ### memory内存
 状态就是内存，内存是整个程序的所有
 
