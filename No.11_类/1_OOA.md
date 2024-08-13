@@ -32,3 +32,30 @@ int main()
     player.move(1,-1);
 }
 ```
+
+### 结构体struct
+class的成员一般默认是私有的(private)，类的成员不可见
+
+结构体的的成员一般默认公有(public)
+
+结构体的存在是为了适应c语言的存在，使用`#define struct class`可直接替换，发现两者并没有差别。
+
+### 二者的选用
+二者的使用只是一种编程风格
+
+- 使用一些plain old data或者只是包含一些变量的结构时，喜欢用struct
+  - 数学中的向量类
+  ```c++
+  struct Vec2
+  {
+    float x,y;
+
+    void Add(const Vec2& other)//结构体中的方法
+    {
+        x += other.y;
+        y =+ other.y;
+    }
+  }
+  ```
+
+- class则适用于可能发生使用继承的情况
